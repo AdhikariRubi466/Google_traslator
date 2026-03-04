@@ -77,13 +77,11 @@ def translate_text():
         output_text.insert(END, "Translation failed. Check internet connection.")
 
 def handle_enter(event):
-    # If Shift is pressed → allow newline
     if event.state & 0x0001:
         return
 
-    # Otherwise translate
     translate_text()
-    return "break"  # stop default newline behavior
+    return "break"  
 
 input_text.bind("<Return>", handle_enter)
 
